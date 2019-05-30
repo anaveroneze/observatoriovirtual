@@ -1,0 +1,11 @@
+{% load i18n %}
+{% trans "Account activation in: " %} {{ site.domain }}:
+
+Hello!
+
+Click the link below to activate your account:
+http://127.0.0.1:8000{% url 'registration_activate' activation_key %}
+
+{% blocktrans %}This link is valid for {{ expiration_days }} days.{% endblocktrans %}
+
+Thank you.
