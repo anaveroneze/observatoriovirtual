@@ -29,7 +29,7 @@ def table(request):
         user = User.objects.get(id=request.user.id)
         UserProf = Usuario(usuario=user)
         UserProf.save()
-        os.mkdir('./users/user_' + str(request.user.id))
+        os.mkdir(settings.MEDIA_ROOT + './users/user_' + str(request.user.id))
     paginator = Paginator(executionList, UserProf.resultsPerPage)
     page = request.GET.get('page')
     if page is None:

@@ -3,6 +3,7 @@ from registration.backends.default.views import RegistrationView
 from observatoriovirtual.forms import UsuarioForm
 from observatoriovirtual.models import Usuario
 import os
+from django.conf import settings
 
 class MyRegistrationView(RegistrationView):
 
@@ -15,7 +16,7 @@ class MyRegistrationView(RegistrationView):
         user_profile.nickname = form_class.cleaned_data['nickname']
         user_profile.company = form_class.cleaned_data['company']
         user_profile.save()
-        os.mkdir('./users/user_' + str(user_profile.id))
+        os.mkdir(settings.MEDIA_ROOT + './users/user_' + str(user_profile.id))
         return user_profile
 
 

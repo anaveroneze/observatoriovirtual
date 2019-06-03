@@ -30,7 +30,7 @@ def fof(request):
         alg = FoFAlgorithm.objects.get(idFoF=idAlg)
 
         execution = Execution(
-            request_by=usuario.usuariofriends,
+            request_by=usuario.usuario,
             algorithm = alg.nameFoF,
         )
         execution.save()
@@ -40,11 +40,14 @@ def fof(request):
             fileIn = request.FILES["Input"]
             execution.inputFile = fileIn
             execution.save()
+            print(execution.inputFile)
 
             queryInputFile = (
                 settings.MEDIA_ROOT +
                 execution.inputFile.name.replace('./', '/')
             ).replace(' ', '\ ')
+
+            print(queryInputFile)
 
             queryOutputFile = queryInputFile
             queryOutputFile = queryOutputFile.replace('input', 'output')
@@ -57,7 +60,7 @@ def fof(request):
 
         run = RunFoFSerial(alg.commandFoF, rperc, processos, kernels, execution.id, queryInputFile, outputFilePath, logFilePath)
 
-        return HttpResponseRedirect(reverse('experimentos'))
+        return HttpResponseRedirect(reverse('experimentos_url'))
 
     form = FoFForm(request.POST or None)
     title = "Experiments %s" % (request.user)

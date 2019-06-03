@@ -1,5 +1,5 @@
 from django.contrib import admin
-from imagem.models import ImagemAlgorithm
+from .models import ImagemAlgorithm
 
 
 class AlgAdmin(admin.ModelAdmin):

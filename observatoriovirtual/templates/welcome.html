@@ -1,21 +1,40 @@
 {%extends "base.html" %}
-
 {% load crispy_forms_tags %}
 
-{% block head_title%}{{title}}{% endblock %}
-
-{% block jumbotron%}
+{% block content %}
+<!--ARRUMAR AQUI REGISTRO DO USUÁRIO-->
       <div class="jumbotron">
-        <h1>Web Portal for Execution of Applications in Astronomy</h1>
-        <p> Web portal for remote execution of experiments with algorithms to process data from simulations in the Astronomy field.</p>
-
           {% if request.user.is_authenticated == false %}
           <a class="btn btn-lg btn-primary" href="{% url 'register_custom' %}" role="button">Registre-se &raquo;</a>
           {% endif %}
         </p>
       </div>
-{% endblock %}
+<!--ARRUMAR AQUI REGISTRO DO USUÁRIO-->
 
-{% block container %}
-{% include "footer.html" %}
+	<div id="portal-column-content" class="cell width-3:4 position-1:4">
+		<div id="main-content">
+			<div id="content">
+
+				<h1 class="documentFirstHeading">Web Portal for Execution of Applications in Astronomy</h1>
+
+				<div class="documentByLine">
+					<span class="documentAuthor">Publicado Por: <a href="/" title="Acesse Publicado Por">INPE</a></span>
+					<?= dataModificacao();?>
+				</div>
+
+				<h2>Sobre</h2>
+				<br />
+
+				<br><br>
+				<p>Web portal for remote execution of experiments with algorithms to process data from simulations in the Astronomy field.</p>
+				<p>
+				</p>
+
+				<p>
+				<strong>Desenvolvido por Otávio Madalosso, Ana Solórzano e Vinícius Monego</strong>
+				</p>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}

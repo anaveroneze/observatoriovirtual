@@ -13,7 +13,7 @@ document.head.appendChild(scriptGoogleAnalytics);
 $(document).ready(function () {
 	/* FUNCAO PARA ADICIONAR A BARRA DO GOVERNO NOS SITES */
 	var barraGoverno = document.createElement('script');
-	barraGoverno.src = "/js/barra-governo.js";
+	barraGoverno.src = "static/js/barra-governo.js";
 	barraGoverno.type = "application/javascript";
 	barraGoverno.id = "scriptBarraGoverno";
 	document.head.appendChild(barraGoverno);
@@ -25,15 +25,15 @@ $(document).ready(function () {
 		if (cont == true || contRodape == true) {
 			$.cookie("contraste", "contraste", { expires: 365, path: '/' });
 			$("body").addClass("contraste");
-			$(".inpe-rodape").attr("src","/img/logo-governo/logoINPE-branco.png");
-			$(".inpe-menu").attr("src","/img/logoinpe-branco-menor.png");
+			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE-branco.png");
+			$(".inpe-menu").attr("src","static/img/logoinpe-branco-menor.png");
 			document.getElementById("contraste").checked = false;
 			document.getElementById("contrasteRodape").checked = false;
 		} else {
 			$.cookie("contraste", "", { expires: 365, path: '/' });
 			$("body").removeClass("contraste");			
-			$(".inpe-rodape").attr("src","/img/logo-governo/logoINPE.png");
-			$(".inpe-menu").attr("src","/img/logoinpe-azul-menor.png");
+			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE.png");
+			$(".inpe-menu").attr("src","static/img/logoinpe-azul-menor.png");
 			document.getElementById("contraste").checked = true;
 			document.getElementById("contrasteRodape").checked = true;
 		}
@@ -46,15 +46,15 @@ $(document).ready(function () {
 		if (cont == true || contRodape == true) {
 			$.cookie("contraste", "contraste", { expires: 365, path: '/' });
 			$("body").addClass("contraste");
-			$(".inpe-rodape").attr("src","/img/logo-governo/logoINPE-branco.png");
-			$(".inpe-menu").attr("src","/img/logoinpe-branco-menor.png");
+			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE-branco.png");
+			$(".inpe-menu").attr("src","static/img/logoinpe-branco-menor.png");
 			document.getElementById("contraste").checked = false;
 			document.getElementById("contrasteRodape").checked = false;
 		} else {
 			$.cookie("contraste", "", { expires: 365, path: '/' });
 			$("body").removeClass("contraste");
-			$(".inpe-rodape").attr("src","/img/logo-governo/logoINPE.png");
-			$(".inpe-menu").attr("src","/img/logoinpe-azul-menor.png");
+			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE.png");
+			$(".inpe-menu").attr("src","static/img/logoinpe-azul-menor.png");
 			document.getElementById("contraste").checked = true;
 			document.getElementById("contrasteRodape").checked = true;
 		}
@@ -63,14 +63,14 @@ $(document).ready(function () {
 	/* VERIFICA SE ALTO CONTRASTE ESTÁ LIGADO */
 	if ($.cookie("contraste") == "contraste") {
 		$("body").addClass("contraste");
-		$(".inpe-rodape").attr("src","/img/logo-governo/logoINPE-branco.png");
-		$(".inpe-menu").attr("src","/img/logoinpe-branco-menor.png");
+		$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE-branco.png");
+		$(".inpe-menu").attr("src","static/img/logoinpe-branco-menor.png");
 		document.getElementById("contraste").checked = false;
 		document.getElementById("contrasteRodape").checked = false;
 	} else {
 		$("body").removeClass("contraste");
-		$(".img-rodape").attr("src","/img/logo-governo/logoINPE.png");
-		$(".inpe-menu").attr("src","/img/logoinpe-azul-menor.png");
+		$(".img-rodape").attr("src","static/img/logo-governo/logoINPE.png");
+		$(".inpe-menu").attr("src","static/img/logoinpe-azul-menor.png");
 		document.getElementById("contraste").checked = true;
 		document.getElementById("contrasteRodape").checked = true;
 	}

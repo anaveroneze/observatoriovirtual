@@ -1,18 +1,30 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <title>INPE/OV</title>
 
-    <title>{% block head_title%}{%endblock%}</title>
-    {% include 'head_css.html'%}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+	<link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="static/img/favicon.png" />
+
+    <link media="screen" href="static/css/plone.css" type="text/css" rel="stylesheet" id="plone-css" />
+	<link media="all" href="static/css/main.css" type="text/css" rel="stylesheet" id="main-css" />
+	<link media="all" href="static/css/style.css" type="text/css" rel="stylesheet" id="style-css" />
+
+	<link media="all" href="static/css/css-intranet-inpe.css" rel="stylesheet" id="intranet-css" />
+	<link media="all" href="static/css/css-menu.css" rel="stylesheet" id="menu-css" />
+
+	<!-- CONTRASTE -->
+	<link media="all" href="static/css/css-intranet-inpe-contraste.css" rel="stylesheet" id="intranet-css-contraste" />
+	<link media="all" href="static/css/css-menu-contraste.css" rel="stylesheet" id="menu-css-contraste" />
+
+	<script src="static/js/jquery/jquery-1.9.1.js" type="application/javascript"></script>
+	<script src="static/js/jquery/jquery.cookie.js" type="application/javascript"></script>
+	<script src="static/js/functions.js" type="application/javascript"></script>
 
     <script>
       function test() {
@@ -28,15 +40,41 @@
           }
       }
      </script>
-
-
-    </head>
+  </head>
 
   <body>
-   {% load staticfiles %}
-    {% include 'navbar.html' %}
+  	{% include "static/topo.html" %}
+    {% load staticfiles %}
+    <div id="main" role="main">
+    <div id="plone-content">
+        <div id="portal-columns" class="row">
 
-      {% block messages %}
+            <!-- RASTRO -->
+            <div id="viewlet-above-content">
+                <div id="portal-breadcrumbs">
+                    <span id="breadcrumbs-you-are-here">
+                        Você está aqui:
+                        <span>
+                            <?= rastro();?>
+                        </span>
+                    </span>
+                </div>
+            </div>
+				{% include "static/menu.html" %}
+                {% block content %}
+                {% endblock %}
+
+                <div class="clear"><!-- --></div>
+				<div id="voltar-topo"><a href="#topo" title="Acesse Voltar para o topo">Voltar para o topo</a></div>
+
+				</div>
+			</div>
+		</div>
+    <div class="clear"><!-- --></div>
+	<!-- Footer -->
+	{% include "static/rodape.html"%}
+
+    {% block messages %}
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }} alert-dismissable"
                  style="padding: 5px; width: 20%; float:right; text-align: center;">
@@ -45,26 +83,5 @@
             </div>
         {% endfor %}
     {% endblock messages %}
-
-    <div style="margin-bottom:50px;padding-top:10px;" class="container">
-
-        {% block jumbotron %}
-        {% endblock %}
-
-        {% block content %}
-        {% endblock %}
-
-    </div>
-
-
-    <div class="container-fluid">
-      <div class="row">
-      {% block container %}
-      {% endblock %}
-      </div>
-    </div>
-
-    {% include "javascript.html" %}
-
   </body>
 </html>
