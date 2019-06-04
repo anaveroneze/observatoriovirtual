@@ -1,6 +1,5 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-{% load static %}
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" dir="ltr">
   <head>
     <title>INPE/OV</title>
@@ -8,23 +7,23 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-	<link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="static/img/favicon.png" />
+	<link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{% static 'img/favicon.png' %}"/>
 
-    <link media="screen" href="static/css/plone.css" type="text/css" rel="stylesheet" id="plone-css" />
-	<link media="all" href="static/css/main.css" type="text/css" rel="stylesheet" id="main-css" />
-	<link media="all" href="static/css/style.css" type="text/css" rel="stylesheet" id="style-css" />
+    <link media="screen" href="{% static 'css/plone.css' %}" type="text/css" rel="stylesheet" id="plone-css" />
+	<link media="all" href="{% static 'css/main.css' %}" type="text/css" rel="stylesheet" id="main-css" />
+	<link media="all" href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" id="style-css" />
 
-	<link media="all" href="static/css/css-intranet-inpe.css" rel="stylesheet" id="intranet-css" />
-	<link media="all" href="static/css/css-menu.css" rel="stylesheet" id="menu-css" />
+	<link media="all" href="{% static 'css/css-intranet-inpe.css' %}" rel="stylesheet" id="intranet-css" />
+	<link media="all" href="{% static 'css/css-menu.css' %}" rel="stylesheet" id="menu-css" />
 
 	<!-- CONTRASTE -->
-	<link media="all" href="static/css/css-intranet-inpe-contraste.css" rel="stylesheet" id="intranet-css-contraste" />
-	<link media="all" href="static/css/css-menu-contraste.css" rel="stylesheet" id="menu-css-contraste" />
+	<link media="all" href="{% static 'css/css-intranet-inpe-contraste.css' %}" rel="stylesheet" id="intranet-css-contraste" />
+	<link media="all" href="{% static 'css/css-menu-contraste.css' %}" rel="stylesheet" id="menu-css-contraste" />
 
-	<script src="static/js/jquery/jquery-1.9.1.js" type="application/javascript"></script>
-	<script src="static/js/jquery/jquery.cookie.js" type="application/javascript"></script>
-	<script src="static/js/functions.js" type="application/javascript"></script>
+	<script src="{% static 'js/jquery/jquery-1.9.1.js' %}" type="application/javascript"></script>
+	<script src="{% static 'js/jquery/jquery.cookie.js' %}" type="application/javascript"></script>
+	<script src="{% static '/js/functions.js' %}" type="application/javascript"></script>
 
     <script>
       function test() {
@@ -43,7 +42,7 @@
   </head>
 
   <body>
-  	{% include "static/topo.html" %}
+  	{% include "topo.html" %}
     {% load staticfiles %}
     <div id="main" role="main">
     <div id="plone-content">
@@ -60,9 +59,18 @@
                     </span>
                 </div>
             </div>
-				{% include "static/menu.html" %}
+				{% include "menu.html" %}
+
+            	<div id="portal-column-content" class="cell width-3:4 position-1:4">
+                    <div id="main-content">
+                        <div id="content">
                 {% block content %}
+
+
                 {% endblock %}
+                        </div>
+                    </div>
+                </div>
 
                 <div class="clear"><!-- --></div>
 				<div id="voltar-topo"><a href="#topo" title="Acesse Voltar para o topo">Voltar para o topo</a></div>
@@ -72,7 +80,7 @@
 		</div>
     <div class="clear"><!-- --></div>
 	<!-- Footer -->
-	{% include "static/rodape.html"%}
+	{% include "rodape.html"%}
 
     {% block messages %}
         {% for message in messages %}

@@ -6,7 +6,7 @@
 {% block content %}
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3'>
-<h1>Login</h1>
+<h1>Entrar</h1>
 <form method="post" action=".">
   {% csrf_token %}
   {{ form|crispy }}
@@ -20,8 +20,8 @@
 <hr/>
 <div class='row'>
 <div class='col-sm-6 col-sm-offset-3 text-align-center'>
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
-<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
+<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Redefinir senha" %}</a>!</p>
+<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Registre-se" %}</a>!</p>
 </div>
 </div>
 

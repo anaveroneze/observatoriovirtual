@@ -1,11 +1,18 @@
-<!DOCTYPE html>
 {%extends "base.html" %}
 {% load static %}
-{% block jumbotron %}
-<div class="jumbotron">
-  <h1><center>Friends-of-Friends</center></h1>
+{% block content %}
 
-    <div style="width:80%;" class="container">
+    <h1 class="documentFirstHeading">Agrupamento</h1>
+
+    <div class="documentByLine">
+		<span class="documentAuthor">Publicado Por: <a href="/" title="Acesse Publicado Por">INPE</a></span>
+		<?= dataModificacao();?>
+	</div>
+
+    <p>Algoritmos de agrupamento.</p>
+
+    <h1>Friends-of-Friends</h1>
+
     <p>Friends-of-Friends (FoF) is an algorithm used to identify structures in galaxy distribution based on physical proximity
         [1]. It gets as input, data from N-body computer simulations in a 3-dimensional space [2]
         used to identify halos and to identify structures in numerical simulations too [3].</p>
@@ -29,9 +36,6 @@
             <figcaption>Groups classified by their gravitational position.</figcaption>
             </center>
         </p>
-
-
-    </div>
 
     <p><b>Available algorithms:</b></p>
 
@@ -57,13 +61,12 @@
         </div>
         </div>
 
-  <h3><center>References</center></h3>
-    <ol>
-      <li>HUCHRA, J. P., GELLER, M. J. Groups of Galaxies I. Nearby groups. 1982. In: The astrophysical, v. 257, p. 423 - 437.</li>
-      <li>DAVIS, M., Efstathiou, G., Frenk, C.S., White, S.D.M., 1985. The evolution of large scale structure in a universe dominated by cold dark matter. In: Astrophys. J. 292, 371–394. doi:10.1086/163168.</li>
-      <li>KNEBE, A. et al.; Haloes gone MAD: The Halo‐Finder Comparison Project. 2011. In: Monthly Notices of the Royal Astronomical Society. vol. 415(3), p. 2293-2318</li>
-      <li>DUARTE, M., Mamon, G. A. How well does the Friends-of-Friends algorithm recover group properties from galaxy catalogs limited in both distance and luminosity? 2014. In: Monthly Notices of the Royal Astronomical Society. 440(2). doi: 10.1093/mnras/stu378. </li>
-    </ol>
+      <h3><center>References</center></h3>
+        <ol>
+          <li>HUCHRA, J. P., GELLER, M. J. Groups of Galaxies I. Nearby groups. 1982. In: The astrophysical, v. 257, p. 423 - 437.</li>
+          <li>DAVIS, M., Efstathiou, G., Frenk, C.S., White, S.D.M., 1985. The evolution of large scale structure in a universe dominated by cold dark matter. In: Astrophys. J. 292, 371–394. doi:10.1086/163168.</li>
+          <li>KNEBE, A. et al.; Haloes gone MAD: The Halo‐Finder Comparison Project. 2011. In: Monthly Notices of the Royal Astronomical Society. vol. 415(3), p. 2293-2318</li>
+          <li>DUARTE, M., Mamon, G. A. How well does the Friends-of-Friends algorithm recover group properties from galaxy catalogs limited in both distance and luminosity? 2014. In: Monthly Notices of the Royal Astronomical Society. 440(2). doi: 10.1093/mnras/stu378. </li>
+        </ol>
 
-</div>
 {% endblock %}

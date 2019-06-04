@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.home, name="home_url"),
     path('contato/', views.contact, name="contato_url"),
     path('sobre/', views.about, name="sobre_url"),
+    path('quemsomos/', views.quemsomos, name="quemsomos_url"),
     path('cluster/', views.cluster, name="cluster_url"),
     path('', include('tabela.urls'), name="tabela_url"), #juntar com o de baixo
     path('experimentos/', views.table, name="experimentos_url"),

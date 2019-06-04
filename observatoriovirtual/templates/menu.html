@@ -1,0 +1,71 @@
+{% load staticfiles %}
+<div id="navigation">
+    <div id="portal-column-one" class="cell width-1:4 position-0">
+
+	<ul class="menu-info">
+        <li><a href="http://www.inpe.br/acessoainformacao/" title="Saiba sobre o Acesso à Informação" target="_blank">Acesso à Informação</a></li>
+        <li class="center"><a href="/" title="Acesse INPE"><img class="inpe-menu" src="{% static 'img/logoinpe-azul-menor.png' %}" alt="Imagem do INPE" /><span class="none">INPE</span></a></li>
+    </ul>
+
+
+    <input type="checkbox" id="menu-mobile" class="trigger" />
+    <label for="menu-mobile">Menu <img src="{% static 'img/menu.png' %}" alt="Menu" /><span class="clear"><!-- --></span></label>
+
+    {% if request.user.is_authenticated %}
+        <li class="nav-item mr-sm-2"><a>Olá, {{user}}!</a></li>
+    {% endif %}
+
+    <ul class="cd-accordion-menu">
+  		<li>
+            <input type="checkbox" id="1" />
+            <label for="1" title="Acesse as funcionalidades do OV" class="titulo">Menu</label>
+        	<ul>
+                <li><a class="navbar-brand" href="{% url 'home_url' %}" title="Acesse Home">Web portal</a></li>
+                <li><a href="{% url 'sobre_url' %}" title="Acesse Sobre">Sobre</a></li>
+                <li><a href="{% url 'quemsomos_url' %}" title="Acesse Quem Somos">Quem Somos</a></li>
+                <li><a class="nav-link" href="{% url 'cluster_url' %}" title="Acesse cluster">Cluster</a></li>
+                <li><a href="{% url 'contato_url' %}" title="Fale conosco">Fale Conosco</a></li>
+
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item mr-sm-2"><a href="{% url 'auth_logout' %}">Sair</a></li>
+                {% else %}
+                    <li class="active mr-sm-2"><a href="{% url 'auth_login' %}">Entrar</a></li>
+                    <li class="active mr-sm-2"><a href="{% url 'registration_register' %}">Registre-se</a></li>
+                {% endif %}
+
+    		</ul>
+        </li>
+        </li>
+
+        {% if request.user.is_authenticated %}
+
+        <li class="has-children">
+            <input type="checkbox" id="2" name="2" checked>
+            <label for="2" title="Acesse os subitens do OV" class="titulo">Experimentos</label>
+            <ul>
+                <li class="has-children">
+                    <input type="checkbox" name="sub-grupo-2" id="sub-grupo-2">
+                    <label for="sub-grupo-2">Agrupamento</label>
+                    <ul>
+                        <li><a href="{% url 'agrupamento:agrupamento_url' %}">Sobre</a></li>
+                        <li><a href="{% url 'agrupamento:fof_url' %}">Friends-of-Friends</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-children">
+                    <input type="checkbox" name="sub-grupo-3" id="sub-grupo-3">
+                    <label for="sub-grupo-3">Imagem</label>
+                    <ul>
+                        <li><a href="{% url 'imagem:imagem_url' %}">Sobre</a></a></li>
+                        <li><a href="{% url 'imagem:wavelet_url' %}">Wavelet</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+
+        {% endif %}
+
+	</ul>
+	</div>
+</div>

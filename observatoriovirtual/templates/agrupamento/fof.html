@@ -1,14 +1,11 @@
 {%extends "base.html" %}
 
-
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 {% crispy form %}
 
-{% block head_title%}Friends of Friends Algorithm{%endblock%}
-
-
 {% block content %}
+    <h1 class="documentFirstHeading">Friends-of-Friends</h1>
 
 	{% if request.user.is_authenticated %}
 		<div id='row-form' class="row">
@@ -18,7 +15,7 @@
 				{% csrf_token %}
 
 					  <div id="div_id_Algorithm" class="form-group"> <label for="id_Algorithm" class="col-form-label  requiredField">
-                		Algorithm<span class="asteriskField">*</span> </label>
+                		Algoritmo<span class="asteriskField">*</span> </label>
 						  <div class="">
 						  <select name="Algorithm" class="select form-control" id="id_Algorithm" onclick='test()'>
 							  {% if Algorithm == None %}
@@ -33,28 +30,22 @@
 
 
 						<div class="form-group" id="extra">
-							<td><label for="idnumprocessos">Number of processes:</label></td>
+							<td><label for="idnumprocessos">Número de processos:</label></td>
 							<td><input name="processos" type="text" maxlength="20" id="idnumprocessos" class="form-control" value="{{processos}}"></td>
 						</div>
 
 					   <div class="form-group" id="extra2">
-							<td><label for="idnumkernels">Number of GPU kernels:</label></td>
+							<td><label for="idnumkernels">Número de kernels da GPU:</label></td>
 							<td><input name="kernels" type="text" maxlength="20" id="idnumkernels" class="form-control" value="{{kernels}}"></td>
 						</div>
 
 
 
 					  <div id="div_id_Input" class="form-group"> <label for="id_Input" class="col-form-label  requiredField">
-                Input file<span class="asteriskField">*</span> </label> <div class=""> <input type="file" name="Input" class="clearablefileinput" required="" id="id_Input"> </div> </div>
+                Arquivo de entrada<span class="asteriskField">*</span> </label> <div class=""> <input type="file" name="Input" class="clearablefileinput" required="" id="id_Input"> </div> </div>
 
 					  <div id="div_id_Rperc" class="form-group"> <label for="id_Rperc" class="col-form-label  requiredField">
-                Percolation radius<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="Rperc" step="any" class="numberinput form-control" required="" id="id_Rperc"> </div> </div
-
-
-					<!--{# <div id="formContent"> Necessario para nao bugar com erro de validacao do crispy #}-->
-						<!--{{form|crispy}}    {# Crispy que falha nao retorna formulario com o csrf_token  #}-->
-					<!--{# </div>				   Isso ocasionava um erro de acesso. (gambiarra no javascript) #}-->
-
+                Raio de percolação<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="Rperc" step="any" class="numberinput form-control" required="" id="id_Rperc"> </div> </div
 
 					<input id='execute' class='btn btn-primary'  type="submit" value="Run">
 

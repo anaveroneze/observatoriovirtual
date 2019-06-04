@@ -3,9 +3,11 @@
 {% load crispy_forms_tags %}
 {% crispy form %}
 
-{% block head_title%}Remoção de Ruído em Imagens via Transformada Wavelet{%endblock%}
-
 {% block content %}
+
+<h1 class="documentFirstHeading">Remoção de Ruído em Imagens via Transformada Wavelet</h1>
+
+
 {% if request.user.is_authenticated %}
 <div id='row-form' class="row">
   <div id="colForm" class="col-sm-3 col-md-3"></div>

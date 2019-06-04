@@ -16,7 +16,7 @@ def home(request):
     context = {
         "title": title
     }
-    return render(request, "welcome.html", context)
+    return render(request, "home.html", context)
 
 def table(request):
     title = "Experimentos"
@@ -54,7 +54,10 @@ def table(request):
 
 
 def about(request):
-    return render(request, "about.html", {})
+    return render(request, "menu/sobre.html", {})
+
+def quemsomos(request):
+    return render(request, "menu/quem_somos.html", {})
 
 def cluster(request):
     return render(request, "cluster/laquibrido.html", {})
@@ -76,9 +79,9 @@ def contact(request):
                   [to_email],
                   fail_silently=False)
         messages.success(request, 'Mensagem enviada com sucesso.')
-        return render(request, "welcome.html", {})
+        return render(request, "home.html", {})
     else:
         context = {
             "form": form,
         }
-        return render(request, "contact.html", context)
+        return render(request, "menu/contato.html", context)

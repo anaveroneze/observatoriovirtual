@@ -1,0 +1,20 @@
+{%extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+	<h1 class="documentFirstHeading">Sobre</h1>
+
+	<div class="documentByLine">
+		<span class="documentAuthor">Publicado Por: <a href="/" title="Acesse Publicado Por">INPE</a></span>
+		<?= dataModificacao();?>
+	</div>
+
+	<p>Este Observatório Virtual permite a execução remota de aplicações da área de Astronomia.</p>
+    <p>O portal oferece versões seriais e paralelas do algoritmo de agrupamento <b>Friends-of-Friends</b>, utilizado para a classificação de objetos astronômicos,
+		e algoritmos para a restauração de imagens utilizando a técnica de <b>wavelet filtering.</b>
+    	Os usuários registrados podem executar quantas execuções desejarem e, ao final, podem realizar o download dos arquivos contendo os resultados do experimento.</p>
+    <p>Este projeto foi desenvolvido originalmente por Otávio Migliavacca Madalosso em 2015 como um trabalho de conclusão da graduação em Ciência da Computação na Universidade Federal de Santa Maria (UFSM)</p>
+    Atualmente, o projeto está sendo continuado por Ana Solórzano e Vinícius Monego.</p>
+	<br />
+
+{% endblock %}

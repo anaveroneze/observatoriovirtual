@@ -1,13 +1,14 @@
-<!DOCTYPE html>
 {%extends "base.html" %}
-{% load static %}
-{% block content %}
-    <h1 class="documentFirstHeading">Imagens</h1>
+{% load crispy_forms_tags %}
 
-    <div class="documentByLine">
+{% block content %}
+	<h1 class="documentFirstHeading">Quem Somos</h1>
+
+	<div class="documentByLine">
 		<span class="documentAuthor">Publicado Por: <a href="/" title="Acesse Publicado Por">INPE</a></span>
 		<?= dataModificacao();?>
 	</div>
 
-    <p>Algoritmos de restauração de imagens.</p>
+<p></p>
+
 {% endblock %}
