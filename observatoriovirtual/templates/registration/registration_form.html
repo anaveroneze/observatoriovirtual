@@ -8,9 +8,10 @@
   <h1 class="documentFirstHeading">Registro</h1>
   <form method="post" action=".">
     {% csrf_token %}
-    {{ form|crispy }}
-
-    <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Join' %}" />
+    {{ form |crispy }}
+    <div style="text-align:center;">
+      <input class='btn-block' type="submit" style="height:30px;width:100px;" value="{% trans 'Registre-se' %}" />
+    </div>
   </form>
   </div>
   </div>

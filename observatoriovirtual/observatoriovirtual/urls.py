@@ -20,7 +20,6 @@ urlpatterns = [
 
     path('accounts/register/', regbackend.MyRegistrationView.as_view(), name='register_custom'),
     path('accounts/', include('registration.backends.default.urls')),
-
     path('register/complete/', TemplateView.as_view(template_name='registration/registration_complete.html'), name='registration_complete'),
     path('register/closed/', TemplateView.as_view(template_name='registration/registration_closed.html'),
          name='registration_disallowed'),

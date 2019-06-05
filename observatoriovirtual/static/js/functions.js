@@ -26,15 +26,15 @@ $(document).ready(function () {
 		if (cont == true || contRodape == true) {
 			$.cookie("contraste", "contraste", { expires: 365, path: '/' });
 			$("body").addClass("contraste");
-			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE-branco.png");
-			$(".inpe-menu").attr("src","static/img/logoinpe-branco-menor.png");
+			$(".inpe-rodape").attr("src","img/logo-governo/logoINPE-branco.png");
+			$(".inpe-menu").attr("src","img/logoinpe-branco-menor.png");
 			document.getElementById("contraste").checked = false;
 			document.getElementById("contrasteRodape").checked = false;
 		} else {
 			$.cookie("contraste", "", { expires: 365, path: '/' });
 			$("body").removeClass("contraste");			
-			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE.png");
-			$(".inpe-menu").attr("src","static/img/logoinpe-azul-menor.png");
+			$(".inpe-rodape").attr("src","img/logo-governo/logoINPE.png");
+			$(".inpe-menu").attr("src","img/logoinpe-azul-menor.png");
 			document.getElementById("contraste").checked = true;
 			document.getElementById("contrasteRodape").checked = true;
 		}
@@ -47,15 +47,15 @@ $(document).ready(function () {
 		if (cont == true || contRodape == true) {
 			$.cookie("contraste", "contraste", { expires: 365, path: '/' });
 			$("body").addClass("contraste");
-			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE-branco.png");
-			$(".inpe-menu").attr("src","static/img/logoinpe-branco-menor.png");
+			$(".inpe-rodape").attr("src","img/logo-governo/logoINPE-branco.png");
+			$(".inpe-menu").attr("src","img/logoinpe-branco-menor.png");
 			document.getElementById("contraste").checked = false;
 			document.getElementById("contrasteRodape").checked = false;
 		} else {
 			$.cookie("contraste", "", { expires: 365, path: '/' });
 			$("body").removeClass("contraste");
-			$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE.png");
-			$(".inpe-menu").attr("src","static/img/logoinpe-azul-menor.png");
+			$(".inpe-rodape").attr("src","img/logo-governo/logoINPE.png");
+			$(".inpe-menu").attr("src","img/logoinpe-azul-menor.png");
 			document.getElementById("contraste").checked = true;
 			document.getElementById("contrasteRodape").checked = true;
 		}
@@ -64,21 +64,21 @@ $(document).ready(function () {
 	/* VERIFICA SE ALTO CONTRASTE ESTÁ LIGADO */
 	if ($.cookie("contraste") == "contraste") {
 		$("body").addClass("contraste");
-		$(".inpe-rodape").attr("src","static/img/logo-governo/logoINPE-branco.png");
-		$(".inpe-menu").attr("src","static/img/logoinpe-branco-menor.png");
+		$(".inpe-rodape").attr("src","img/logo-governo/logoINPE-branco.png");
+		$(".inpe-menu").attr("src","img/logoinpe-branco-menor.png");
 		document.getElementById("contraste").checked = false;
 		document.getElementById("contrasteRodape").checked = false;
 	} else {
 		$("body").removeClass("contraste");
-		$(".img-rodape").attr("src","static/img/logo-governo/logoINPE.png");
-		$(".inpe-menu").attr("src","static/img/logoinpe-azul-menor.png");
+		$(".img-rodape").attr("src","img/logo-governo/logoINPE.png");
+		$(".inpe-menu").attr("src","img/logoinpe-azul-menor.png");
 		document.getElementById("contraste").checked = true;
 		document.getElementById("contrasteRodape").checked = true;
 	}
 
 	var menuEhIgualUrl = function menuEhIgualUrl(href, url) {
 		url = url.split('?')[0];
-		return url == href || url == href + "../base.html" || url + "index" == href || url + "index" == href + "../base.html";
+		return url == href || url == href + "../../templates/base.html" || url + "index" == href || url + "index" == href + "../../templates/base.html";
 	};
 
 	/* VERIFICA MENU ABERTO */
@@ -112,7 +112,7 @@ $(document).ready(function () {
 	var url = document.URL;
 	var width = $(window).width();
 	if (width > 768) {
-		var finalUrl = url.replace(domain, "").replace("../base.html", "").replace(".php", "");
+		var finalUrl = url.replace(domain, "").replace("../../templates/base.html", "").replace(".html", "");
 		var found = abreMenu(finalUrl);
 		if (!found) {
 			var urlWithoutEnd = finalUrl.substr(0, finalUrl.lastIndexOf("\/") + 1);

@@ -4,7 +4,7 @@
 
 	// Script para carregar jQuery 1.8.2
 	var script     = document.createElement('script');
-	script.src = "/js/jquery/jquery-1.8.2.min.js";
+	script.src = "/jquery/jquery-1.8.2.min.js";
 
 	// Script para carregar a barra do Governo
 	var scriptBarra     = document.createElement('script');

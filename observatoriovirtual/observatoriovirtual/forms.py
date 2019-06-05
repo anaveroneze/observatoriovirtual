@@ -7,7 +7,6 @@ class UsuarioForm(RegistrationFormUniqueEmail):
     company = forms.CharField(required=False)
 
 class ContactForm(forms.Form):
-    nome = forms.CharField(label="Name")
+    nome = forms.CharField(label="Nome")
     email = forms.EmailField(label="E-mail")
-    mensagem = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Please enter the  description'}))
-    # mensagem = forms.TextField(label="Message")
+    mensagem = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Escreva aqui sua mensagem.'}))

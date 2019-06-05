@@ -2,31 +2,27 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
 <div class='row'>
-<div class='col-sm-6 col-sm-offset-3'>
-<h1>Entrar</h1>
-<form method="post" action=".">
-  {% csrf_token %}
-  {{ form|crispy }}
-
-  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Submit' %}" />
-  <input type="hidden" name="next" value="{{ next }}" />
-</form>
+  <div class='col-sm-6 col-sm-offset-3'>
+	<h1 class="documentFirstHeading">Entrar</h1>
+    <form method="post" action=".">
+      {% csrf_token %}
+      {{ form|crispy }}
+      </br>
+<div style="text-align:center;">
+      <input class='btn-block' type="submit" style="height:30px;width:50px;" value="{% trans 'Entrar' %}" />
+</div>
+    </form>
+  </div>
 </div>
 
-</div>
 <hr/>
 <div class='row'>
-<div class='col-sm-6 col-sm-offset-3 text-align-center'>
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Redefinir senha" %}</a>!</p>
-<p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Registre-se" %}</a>!</p>
+  <div class='col-sm-6 col-sm-offset-3 text-align-center'>
+  <p>{% trans "Esqueceu a senha" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Redefinir a senha" %}</a></p>
+  <p>{% trans "Não está cadastrado" %}? <a href="{% url 'registration_register' %}">{% trans "Registre-se" %}</a>!</p>
+  </div>
 </div>
-</div>
-
-<script>
-    alert('{{ message }}');
-</script>
 
 {% endblock %}
