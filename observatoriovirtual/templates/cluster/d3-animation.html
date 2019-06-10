@@ -1,3 +1,4 @@
+{% load static %}
 <style>
 
 .node circle {
@@ -27,7 +28,7 @@
 var treeData =
   {
     "name": "LACHibrido",
-    "url": "./figuras/host.png",
+    "url": "{% static '/img/laquibrido/host.png' %}",
     "children": [
       {
         "name": "2 x Intel Xeon E5-2660 v2",
@@ -35,14 +36,14 @@ var treeData =
         "url": "https://ark.intel.com/content/www/us/en/ark/products/75272/intel-xeon-processor-e5-2660-v2-25m-cache-2-20-ghz.html",
         "children": [
           { "name": "node[1-7]",
-            "url": "/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/fattwin.png",
+            "url": "{% static '/img/laquibrido/fattwin.png' %}",
             "children":[
               {"name":"fattwin-24", "url": ""},
               {"name":"fattwin-480", "url": ""},
               {"name":"fattwin-1000", "url": ""}
             ]},
           { "name": "node08",
-            "url": "/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/fattwin.png",
+            "url": "{% static '/img/laquibrido/fattwin.png' %}",
             "children": [
               {"name":"fattwin-dev", "url": ""}
             ]}
@@ -53,14 +54,14 @@ var treeData =
         "url": "https://ark.intel.com/content/www/us/en/ark/products/81706/intel-xeon-processor-e5-2660-v3-25m-cache-2-60-ghz.html",
         "children": [
             { "name": "node[9-10]",
-              "url": "/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/gpu1.png",
+              "url": "{% static '/img/laquibrido/gpu1.png' %}",
               "children":[
                 {"name":"gpu1-24", "url": ""},
                 {"name":"gpu1-480", "url": ""},
                 {"name":"gpu1-1000", "url": ""}
               ]},
             { "name": "node11",
-              "url": "/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/gpu1.png",
+              "url": "{% static '/img/laquibrido/gpu1.png' %}",
               "children": [
                 {"name":"gpu1-dev", "url": ""}
               ]}
@@ -72,14 +73,14 @@ var treeData =
         "url": "https://ark.intel.com/content/www/br/pt/ark/products/81709/intel-xeon-processor-e5-2670-v3-30m-cache-2-30-ghz.html",
         "children":[
           { "name": "node[12-13]",
-            "url": "/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/gpu2.png",
+            "url": "{% static '/img/laquibrido/gpu2.png' %}",
             "children":[
               {"name":"gpu2-24", "url": ""},
               {"name":"gpu2-480", "url": ""},
               {"name":"gpu2-1000", "url": ""}
             ]},
           { "name": "node14",
-            "url": "/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/gpu2-dev.png",
+            "url": "{% static '/img/laquibrido/gpu2-dev.png' %}",
             "children":[
               {"name":"gpu2-dev", "url": ""}
             ]}
@@ -217,7 +218,7 @@ function update(source) {
       .on('click', function(d, i) {
         //Mostrar img na mesma página:
         // var img = svg.append('image')
-        // .attr('xlink:href', '/home/ana/Área de Trabalho/2019-1/cluster/d3/figuras/fattwin.png')
+        // .attr('xlink:href', "{% static './img/laquibrido/fattwin.png' %}")
         // .attr('width', 500)
         // .attr('x', 600)
         if(d.data.url !== "")
