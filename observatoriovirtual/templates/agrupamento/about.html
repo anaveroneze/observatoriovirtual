@@ -1,4 +1,5 @@
-{%extends "base.html" %}
+{% extends "base.html" %}
+
 {% load static %}
 {% block content %}
 
@@ -9,13 +10,14 @@
 		<?= dataModificacao();?>
 	</div>
 
-    <p>Algoritmos de agrupamento.</p>
+    <p>Aqui estão descritos os algoritmos de agrupamento disponíveis nesta plataforma e os links para download dos códigos.</p>
 
     <h1>Friends-of-Friends</h1>
 
-    <p>Friends-of-Friends (FoF) is an algorithm used to identify structures in galaxy distribution based on physical proximity
-        [1]. It gets as input, data from N-body computer simulations in a 3-dimensional space [2]
-        used to identify halos and to identify structures in numerical simulations too [3].</p>
+    <p> Friends-of-Friends (FoF) é um algoritmo usado para identificar estruturas no Universo baseado
+        na distribuição de partículas que compõe a matéria escura do universo e a proximidade física
+        entre elas [1]. Como entrada, o algoritmo recebe dados de simulação de N-corpos em um
+        espaço tridimensional [2], usados para identificar halos e estruturas em simulações numéricas [3]. </p>
     <p>
         FoF is one of the most popular grouping percolation methods, specially because the other methods, as the Bayesian, for example,
         are not publicly available and are more difficult to code. Besides, the FoF uses just a single free parameter defined by the
@@ -29,19 +31,19 @@
         <p>
             <center>
             <img src="{% static '/img/fof1.png' %}" alt="Italian Trulli" align="middle" width="50%"/>
-            <figcaption>Input particles position.</figcaption>
+            <figcaption>Posição inicial das partículas.</figcaption>
             <img src="{% static 'img/fof2.png' %}" alt="Italian Trulli" align="middle" width="50%"/>
-            <figcaption>Considering a sphere of radius R around each particle.</figcaption>
+            <figcaption>Considernaod uma esfera de raio R ao redor de cada partícula.</figcaption>
             <img src="{% static 'img/fof3.png' %}" alt="Italian Trulli" align="middle" width="50%"/>
-            <figcaption>Groups classified by their gravitational position.</figcaption>
+            <figcaption>Grupos classificados pela sua posição gravitacional.</figcaption>
             </center>
         </p>
 
-    <p><b>Available algorithms:</b></p>
+    </br>
+    <p><h1><b>Algoritmos disponíveis:</b></h1></p>
 
 		<div id="postlist">
 			<div class="panel">
-
                 {% for alg in results %}
                   <div class="panel-heading">
                         <div class="text-center">
@@ -60,8 +62,9 @@
                 {% endfor %}
         </div>
         </div>
+    </br>
 
-      <h3><center>References</center></h3>
+      <h3><center>Referências</center></h3>
         <ol>
           <li>HUCHRA, J. P., GELLER, M. J. Groups of Galaxies I. Nearby groups. 1982. In: The astrophysical, v. 257, p. 423 - 437.</li>
           <li>DAVIS, M., Efstathiou, G., Frenk, C.S., White, S.D.M., 1985. The evolution of large scale structure in a universe dominated by cold dark matter. In: Astrophys. J. 292, 371–394. doi:10.1086/163168.</li>

@@ -72,4 +72,4 @@ def fof(request):
 
 def about(request):
     query_results = FoFAlgorithm.objects.all()
-    return render(request, 'agrupamento/about.html', {"results" : query_results})
+    return render(request, 'agrupamento/about.html', {"results": query_results})

@@ -1,5 +1,5 @@
-{%extends "base.html" %}
-{% load crispy_forms_tags %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 	<h1 class="documentFirstHeading">Laquibrido</h1>
@@ -9,7 +9,12 @@
 		<?= dataModificacao();?>
 	</div>
 
-<p>Este trabalho utilizou recursos computacionais do cluster Laquibrido, mantido pelo LAC/INPE, e adquirido com recursos financeiros do governo brasileiro</p>
-<p><a href="http://www.lac.inpe.br/~celso/LAQUIBRIDO.html" title="Laquibrido">Cluster</a></p>
+<p>Este trabalho utiliza recursos computacionais do cluster Laquibrido, mantido pelo LAC/INPE, e adquirido com recursos financeiros do governo brasileiro</p>
+<p>Mais informações em: <a href="http://www.lac.inpe.br/~celso/LAQUIBRIDO.html" title="Laquibrido">http://www.lac.inpe.br/~celso/LAQUIBRIDO.html</a></p>
+
+	<div id="div-d3" align="center">
+		    {% include "cluster/d3-animation.html" %}
+	</div>
+
 
 {% endblock %}

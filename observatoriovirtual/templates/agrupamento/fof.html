@@ -1,5 +1,5 @@
 {%extends "base.html" %}
-
+{% load i18n %}
 {% load staticfiles %}
 {% load crispy_forms_tags %}
 {% crispy form %}
@@ -47,10 +47,11 @@
 					  <div id="div_id_Rperc" class="form-group"> <label for="id_Rperc" class="col-form-label  requiredField">
                 Raio de percolação<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="Rperc" step="any" class="numberinput form-control" required="" id="id_Rperc"> </div> </div
 
-					<input id='execute' class='btn btn-primary'  type="submit" value="Run">
-
 				</form>
 		  	</div>
+				<div style="text-align:center;">
+				  <input class='btn-block' type="submit" style="height:50px;width:80px;" value="{% trans 'Executar' %}" />
+			  </div>
 		  	<div id="colForm" class="col-sm-3 col-md-3"></div>
 		</div>
 

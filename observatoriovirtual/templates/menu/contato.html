@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load i18n %}
 {% block head_title %}Contact{% endblock %}
 
 
@@ -10,15 +11,16 @@
 		<span class="documentAuthor">Publicado Por: <a href="/" title="Acesse Publicado Por">INPE</a></span>
   </div>
 
-  <p>Em caso de alguma sugestão ou dúvida entre em contato conosco pelo formulário abaixo. </p>
+  <p>Preencha os campos do formulário abaixo e clique no botão CONFIRMAR para finalizar o contato.</p>
 
   <div class="row">
     <div class="col-md-3 col-sm-3"></div>
     <div class="col-sm-6 col-md-6 center-block">
       <form method="POST" action=".">{% csrf_token %}
         {{form|crispy}}
-        <p style="text-align: center" class="lead">
-          <input class='btn btn-primary center-block' type="submit" value="Send"></p>
+        <div style="text-align:center;">
+      <input class='btn-block' type="submit" style="height:30px;width:50px;" value="{% trans 'Confirmar' %}" />
+</div>
       </form>
     </div>
     <div class="col-md-3 col-sm-3"></div>

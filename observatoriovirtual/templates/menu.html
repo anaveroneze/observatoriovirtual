@@ -27,6 +27,7 @@
                 <li><a href="{% url 'contato_url' %}" title="Fale conosco">Fale Conosco</a></li>
 
                 {% if request.user.is_authenticated %}
+                    <li class="nav-item mr-sm-2"><a href="{% url 'experimentos_url' %}">Meus Experimentos</a></li>
                     <li class="nav-item mr-sm-2"><a href="{% url 'auth_logout' %}">Sair</a></li>
                 {% else %}
                     <li class="active mr-sm-2"><a href="{% url 'auth_login' %}">Entrar</a></li>

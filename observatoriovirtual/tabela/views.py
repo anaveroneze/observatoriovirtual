@@ -1,8 +1,6 @@
 from crispy_forms.helper import FormHelper
 from crispy_forms.utils import render_crispy_form
-from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
 from django.template import RequestContext
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
@@ -74,12 +72,13 @@ def experimentsRemove(request):
 
     if request.method == 'POST':
         data = request.POST.get('data')
-
+        print("REMOVE")
+        print(data)
         if data:
             ids = data.split(",")
             Execution.objects.filter(id__in=ids).delete()
 
-    return HttpResponseRedirect(reverse('experiments'))
+    return HttpResponseRedirect(reverse('experimentos_url'))
 
 
 @csrf_exempt

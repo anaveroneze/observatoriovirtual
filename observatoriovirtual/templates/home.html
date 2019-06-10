@@ -1,17 +1,15 @@
-{%extends "base.html" %}
+{% extends "base.html" %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-<!--ARRUMAR AQUI REGISTRO DO USUÁRIO-->
       <div class="jumbotron">
           {% if request.user.is_authenticated == false %}
           <a class="btn btn-lg btn-primary" href="{% url 'register_custom' %}" role="button">Registre-se &raquo;</a>
           {% endif %}
         </p>
       </div>
-<!--ARRUMAR AQUI REGISTRO DO USUÁRIO-->
 
-		<h1 class="documentFirstHeading">Web Portal for Execution of Applications in Astronomy</h1>
+		<h1 class="documentFirstHeading">Plataforma Web para a Execução de Aplicações da área de Astronomia</h1>
 
 		<div class="documentByLine">
 			<span class="documentAuthor">Publicado Por: <a href="/" title="Acesse Publicado Por">INPE</a></span>
@@ -19,7 +17,7 @@
 		</div>
 
 		<br><br>
-		<p>Web portal for remote execution of experiments with algorithms to process data from simulations in the Astronomy field.</p>
+		<p>Portal Web para execução remota de experimentos com algoritmos para processar dados de simulações no campo da Astronomia.</p>
 		<p>
 		</p>
 

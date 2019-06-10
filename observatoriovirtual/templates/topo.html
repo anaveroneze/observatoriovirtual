@@ -1,10 +1,16 @@
-{% load staticfiles %}
+{% load static %}
+
 <a accesskey="0" href="#content" title="Ir para conteúdo" class="acesso">Ir para conteúdo <span>0</span ></a>
 <noscript>
 Habilite o JavaScript do navegador para que o site funcione corretamente.
 </noscript>
 
-{% include "barra-governo.html" %}
+<div id="barra-brasil">
+	<ul id="menu-barra-temp">
+		<li><a href="http://brasil.gov.br">Portal do Governo Brasileiro</a></li>
+		<li><a href="http://epwg.governoeletronico.gov.br/barra/atualize.html">Atualize sua Barra de Governo</a></li>
+	</ul>
+</div>
 
 <div class="fundo-topo" id="topo">
 	<div class="conteudo-topo">
@@ -22,7 +28,7 @@ Habilite o JavaScript do navegador para que o site funcione corretamente.
     
         <ul class="acessibilidade" >
             <li>
-            	<a href="/navegacao/acessibilidade.php" title="Acesse Acessibilidade">ACESSIBILIDADE</a>
+            	<a href="{% static 'navegacao/acessibilidade.php' %}" title="Acesse Acessibilidade">ACESSIBILIDADE</a>
             </li>		
             <li>
             	<input type="checkbox" name="cont" id="contraste" checked="checked" />
@@ -30,7 +36,7 @@ Habilite o JavaScript do navegador para que o site funcione corretamente.
                 <a class="contraste" id="contraste-link" title="Altere o Contraste">ALTO CONTRASTE</a>
             </li>
             <li>
-            	<a href="/navegacao/mapa-site.php" title="Acesse Mapa do Site">MAPA DO SITE</a>
+            	<a href="{% static 'navegacao/mapa-site.php' %}" title="Acesse Mapa do Site">MAPA DO SITE</a>
             </li>
         </ul>
     

@@ -1,4 +1,6 @@
-{% load staticfiles %}
+{% load static %}
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" dir="ltr">
   <head>
@@ -43,7 +45,6 @@
 
   <body>
   	{% include "topo.html" %}
-    {% load staticfiles %}
     <div id="main" role="main">
     <div id="plone-content">
         <div id="portal-columns" class="row">
@@ -64,10 +65,10 @@
             	<div id="portal-column-content" class="cell width-3:4 position-1:4">
                     <div id="main-content">
                         <div id="content">
-                {% block content %}
+                        {% block content %}
 
 
-                {% endblock %}
+                        {% endblock %}
                         </div>
                     </div>
                 </div>
@@ -79,6 +80,7 @@
 			</div>
 		</div>
     <div class="clear"><!-- --></div>
+
 	<!-- Footer -->
 	{% include "rodape.html"%}
 

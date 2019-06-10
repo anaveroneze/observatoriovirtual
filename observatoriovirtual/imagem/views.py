@@ -11,7 +11,7 @@ from tabela.models import Execution
 
 @csrf_protect
 def wavelet(request):
-
+    print("WAVELETTT")
     if request.method == 'POST':
         form = WaveletForm(request.POST, request.FILES or None)
         if not form.is_valid():
@@ -65,7 +65,7 @@ def wavelet(request):
 
         run = WaveletExperiment.delay((wavelet, method, samount), request.user.email, queryInputFile, outputFilePath, logFilePath, execution.id)
 
-        return HttpResponseRedirect(reverse('experiments'))
+        return HttpResponseRedirect(reverse('experimentos_url'))
 
     form = WaveletForm(request.POST or None)
 
