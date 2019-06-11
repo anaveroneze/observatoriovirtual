@@ -14,7 +14,7 @@ Instruções para um sistema baseado em Debian:
 
 
 
-2. Instale o Redis, que será usado como um *broker* para o Celery.
+2. Instale o [Redis](https://redis.io/), que será usado como um *broker* para o [Celery](http://www.celeryproject.org/).
 
 ```bash 
 $ apt install python3-pip virtualenv redis-server
@@ -32,7 +32,7 @@ Ative o ambiente virtual criado:
 $ source myvenv/bin/activate
 ```
 
-4. Clone este projeto dentro do ambiente virtual
+4. Clone este repositório 
 
 5. Instale o restante dos pacotes necessários:
 
@@ -56,4 +56,5 @@ $ celery -A webfriends worker --loglevel=DEBUG # Inicia o worker do Celery
 
 Finalmente, abre o projeto em http://localhost:8000 em um navegador web!
 
-- **Atenção!** Mudanças para configurações locais podem ser necessárias nos arquivos: *settings*, *experiments.py* e *tasks.py*.
+- **Atenção!** <br>
+Mudanças para configurações locais podem ser necessárias nos arquivos: *settings.py*, *experiments.py* e *tasks.py*.
