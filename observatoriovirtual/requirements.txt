@@ -11,6 +11,10 @@ Django==2.1.4
 django-crispy-forms==1.7.2
 django-jsonview==1.2.0
 django-registration-redux==2.5
+gevent==1.4.0
+greenlet==0.4.15
+gunicorn==19.9.0
+honcho==1.0.1
 idna==2.8
 kiwisolver==1.0.1
 kombu==4.2.1
@@ -31,3 +35,4 @@ six==1.12.0
 toolz==0.9.0
 urllib3==1.24.1
 vine==1.1.4
+whitenoise==4.1.3
