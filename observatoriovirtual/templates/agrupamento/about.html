@@ -44,22 +44,21 @@
 
 		<div id="postlist">
 			<div class="panel">
+                <ul>
                 {% for alg in results %}
                   <div class="panel-heading">
                         <div class="text-center">
                             <div class="row">
                                 <div class="col-sm-9">
-                                    <h4 class="pull-left">{{ alg.nameFoF }}</h4>
+                                    <li><h3 class="pull-left">{{ alg.nameFoF }}</h3></li>
+                                    <p>Descrição: {{ alg.descFoF }}</p>
+                                    <a href="#">Download</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="panel-body">
-                        <p>{{ alg.descFoF }}</p>
-                        <a href="#"> Download {{ alg.commandFoF }}</a>
-                    </div>
                 {% endfor %}
+            </ul>
         </div>
         </div>
     </br>

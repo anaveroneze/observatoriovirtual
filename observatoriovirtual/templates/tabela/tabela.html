@@ -94,50 +94,50 @@
         </tbody>
       </table>
 
+      <div style="padding-bottom:10px" >
+        <ul class="nav navbar-nav navbar-right">
+          <ul class="pagination no-margin pull-right">
+  
+            {% if data.has_previous %}
+              <li class="page-item"><a class="page-link" href="?page={{ data.previous_page_number }}">Anterior</a></li>
+            {% endif %}
+  
+            {% for page, value in pagesIndex.items %}
+              {% if value > 0 %}
+                <li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
+              {% endif %}
+  
+                <!--{% if page == 2 %}-->
+                <!--<li class='active'><a href="#">{{value}}</a></li>-->
+                <!--{% else %}-->
+                <!--<li><a href="?page={{value}}">{{value}}</a></li>-->
+                <!--{% endif %}-->
+  
+            {% endfor %}
+  
+            {% if data.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ data.next_page_number }}">Próximo</a></li>
+            {% endif %}
+  
+          </ul>
+        </ul>
+      </div>
+  
+      <form id="formRemove" method='POST' action='{% url 'expRemove' %}' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div style="text-align:center;">
+            <input class='btn btn-default btn-sm' type="submit"  id="btExcluir" style="height:50px;width:80px;" value="Remover"/>
+        </div>
+      </form>
+
     {% else %}
       <div id="colForm" class="col-sm-3 col-md-3"></div>
       <div id="colForm" class="col-sm-6 col-md-6 text-center">
         <hr>
-        <p1>Você não possui experimentos.</p1>
+        <center><p1>Você não possui experimentos.</p1></center>
         <hr>
       </div>
       <div id="colForm" class="col-sm-3 col-md-3"></div>
     {% endif %}
-
-      <div style="padding-bottom:10px" >
-      <ul class="nav navbar-nav navbar-right">
-        <ul class="pagination no-margin pull-right">
-
-          {% if data.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page={{ data.previous_page_number }}">Anterior</a></li>
-          {% endif %}
-
-          {% for page, value in pagesIndex.items %}
-            {% if value > 0 %}
-              <li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
-            {% endif %}
-
-              <!--{% if page == 2 %}-->
-              <!--<li class='active'><a href="#">{{value}}</a></li>-->
-              <!--{% else %}-->
-              <!--<li><a href="?page={{value}}">{{value}}</a></li>-->
-              <!--{% endif %}-->
-
-          {% endfor %}
-
-          {% if data.has_next %}
-          <li class="page-item"><a class="page-link" href="?page={{ data.next_page_number }}">Próximo</a></li>
-          {% endif %}
-
-        </ul>
-      </ul>
-    </div>
-
-    <form id="formRemove" method='POST' action='{% url 'expRemove' %}' enctype="multipart/form-data">
-      {% csrf_token %}
-      <div style="text-align:center;">
-          <input class='btn btn-default btn-sm' type="submit"  id="btExcluir" style="height:50px;width:80px;" value="Remover"/>
-      </div>
-    </form>
 
 {% endblock %}
