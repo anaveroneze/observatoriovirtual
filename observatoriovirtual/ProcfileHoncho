@@ -1,3 +1,1 @@
 web: gunicorn observatoriovirtual.wsgi --log-file -
-redis: redis-server
-celery: celery -A observatoriovirtual worker -l info -Ofair
